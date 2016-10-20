@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.formTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="contenido">
+                    <h2>#{str.formNameHeader}</h2>
+                    <p:fieldset legend="#{str.legendNameForm}">
+                         <h:form>
+                             <h:panelGrid columns="1">
+                                 <p:inputText placeholder="#{str.vinosNamePrompt}" value="#{vinoBean.vino.nombre}"></p:inputText>
+                                 <p:inputText placeholder="#{str.typePrompt}" value="#{vinoBean.vino.tipo}"></p:inputText>
+                                 <p:inputText placeholder="#{str.marcaPrompt}" value="#{vinoBean.vino.marca}"></p:inputText>
+                                 <p:selectOneMenu value="#{vinoBean.vino.compania.idCompania}">
+                                     <f:selectItems value="#{vinoBean.companias}" var="a" itemLabel="#{a.nombre}" itemValue="#{a.idCompania}"></f:selectItems>                                     
+                                 </p:selectOneMenu>                                 
+                             </h:panelGrid>
+                             <p:commandButton value="#{str.buttonSave}" action="#{vinoBean.guardar()}" />
+                             <p:commandButton value="#{str.buttonDelete}" action="#{vinoBean.eliminar()}" />
+                             <p:commandButton value="#{str.buttonCancel}" action="#{vinoBean.cancelar()}" />
+                          </h:form>
+                    </p:fieldset>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

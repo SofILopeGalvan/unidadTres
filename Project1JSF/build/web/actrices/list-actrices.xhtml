@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+        <h:head>
+             <title>#{str.listActrizTitle}</title>
+        </h:head>
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="contenido">
+                    <h1>#{str.listActrizTitle}</h1>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{actrizBean.iniciar()}"></p:commandButton>
+                    </h:form>
+                    <p:dataTable value="#{actrizBean.actrices}" var="a">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{actrizBean.editar(a)}"></p:commandButton>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.nameActrizHeader}">
+                            <p:outputLabel value="#{a.nombre}"></p:outputLabel>
+                        </p:column>
+                         <p:column headerText="#{str.apPatActrizHeader}">
+                            <p:outputLabel value="#{a.apellidoPaterno}"></p:outputLabel>
+                        </p:column> 
+                        <p:column headerText="#{str.apMatActrizHeader}">
+                            <p:outputLabel value="#{a.apelllidoMaterno}"></p:outputLabel>
+                        </p:column> 
+                        <p:column headerText="#{str.estilistaNameHeader}">
+                            <p:outputLabel value="#{a.estilista.nombre}"></p:outputLabel>
+                        </p:column>
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

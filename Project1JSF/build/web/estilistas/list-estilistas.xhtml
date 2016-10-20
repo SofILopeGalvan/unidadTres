@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.estilistaListTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="contenido">
+                    <h1>#{str.estilistaListTitle}</h1>
+                    <h:form>
+                        <p:commandButton value="#{str.buttonAdd}" action="#{estilistaBean.iniciar()}"></p:commandButton>
+                    </h:form>
+                    <p:dataTable value="#{estilistaBean.estilistas}" var="e">
+                        <p:column headerText="#{str.action}">
+                            <h:form>
+                                <p:commandButton value="#{str.buttonEdit}" action="#{estilistaBean.editar(e)}"></p:commandButton>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{str.estilistaNameHeader}">
+                            <p:outputLabel value="#{e.nombre}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="#{str.estilistaCityPathHeader}">
+                            <p:outputLabel value="#{e.ciudad}"></p:outputLabel>
+                        </p:column>
+                         <p:column headerText="#{str.estilistaColoniaPathHeader}">
+                            <p:outputLabel value="#{e.colonia}"></p:outputLabel>
+                        </p:column>
+                        
+                    </p:dataTable>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>

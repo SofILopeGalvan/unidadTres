@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/Project1JSF/web/WEB-INF/faces-config.xml</file>
+            <file>file:/F:/Project1JSF/web/companias/list-companias.xhtml</file>
+            <file>file:/F:/Project1JSF/web/vinos/list-vinos.xhtml</file>
+            <file>file:/F:/Project1JSF/src/java/utng/configuracion/strings.properties</file>
+            <file>file:/F:/Project1JSF/src/java/utng/modelo/Vino.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/configuracion/HibernateUtil.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/datos/VinoDAO.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/modelo/Compania.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/manejador/VinoBean.java</file>
+            <file>file:/F:/Project1JSF/web/vinos/form-vinos.xhtml</file>
+            <file>file:/F:/Project1JSF/src/java/utng/datos/CompaniaDAO.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/manejador/CompaniaBean.java</file>
+            <file>file:/F:/Project1JSF/src/java/utng/configuracion/hibernate.cfg.xml</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+        <h:head>
+             <title>#{str.formTitle}</title>
+        </h:head>
+
+        <h:body>
+            <ui:composition template="/templates/template.xhtml">
+                <ui:define name="contenido">
+                    <h2>#{str.formNameHeader}</h2>
+                    <p:fieldset legend="#{str.legendNameForm}">
+                         <h:form>
+                             <h:panelGrid columns="1">
+                                 <p:inputText placeholder="#{str.actricesNamePrompt}" value="#{actrizBean.actriz.nombre}"></p:inputText>
+                                 <p:inputText placeholder="#{str.actricesApPatPrompt}" value="#{actrizBean.actriz.apellidoPaterno}"></p:inputText>
+                                 <p:inputText placeholder="#{str.actricesApMatPrompt}" value="#{actrizBean.actriz.apelllidoMaterno}"></p:inputText>
+                                 <p:selectOneMenu value="#{actrizBean.actriz.estilista.idEstilista}">
+                                     <f:selectItems value="#{actrizBean.estilistas}" var="a" itemLabel="#{a.nombre}" itemValue="#{a.idEstilista}"></f:selectItems>                                     
+                                 </p:selectOneMenu>                                 
+                             </h:panelGrid>
+                             <p:commandButton value="#{str.buttonSave}" action="#{actrizBean.guardar()}" />
+                             <p:commandButton value="#{str.buttonDelete}" action="#{actrizBean.eliminar()}" />
+                             <p:commandButton value="#{str.buttonCancel}" action="#{actrizBean.cancelar()}" />
+                          </h:form>
+                    </p:fieldset>
+                </ui:define>
+            </ui:composition>
+        </h:body>
+</html>
